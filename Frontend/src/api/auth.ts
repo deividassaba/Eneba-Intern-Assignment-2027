@@ -28,7 +28,7 @@ export async function ApiLoginRequest(data: LoginRequest): Promise<{token: strin
     const result = await response.json();
 
     if (!result.token) {
-      throw new Error("Login response does not contain a token");
+      throw new Error("Email or password is incorrect");
     }
 
     return {token: result.token, email: data.email }

@@ -24,7 +24,7 @@
 }
 .card-body{
   padding: 15px;
-  background: $secondary;
+  
 }
 /* card */
 .card-container{
@@ -36,6 +36,7 @@
 }
 .card{
   color: $text-primary;
+  background: $secondary;
   margin: 10px;
   border: 1px solid #63e3c2;
   .region{

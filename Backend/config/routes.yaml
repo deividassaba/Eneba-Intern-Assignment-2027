@@ -11,4 +11,4 @@ api_login_check:
 
 controllers:
     resource: routing.controllers
-
+    format: json

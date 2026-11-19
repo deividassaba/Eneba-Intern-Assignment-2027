@@ -21,17 +21,14 @@ export default function LoginForm({
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError("");
     setLoading(true);
 
     try {
       await onSubmit({ email, password });
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Login failed.");
+      throw err
     } finally {
       setLoading(false);
     }
@@ -58,8 +55,6 @@ export default function LoginForm({
         value={password}
         onChange={setPassword}
       />
-
-      {error && <p className="auth-error">{error}</p>}
 
       <AuthButton text={submitText} loading={loading} />
     </form>
