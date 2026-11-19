@@ -1,3 +1,72 @@
+
+# =========================
+# Symfony Backend
+# =========================
+
+/Backend/vendor/
+/Backend/var/
+/Backend/.env.local
+/Backend/.env.*.local
+/Backend/.env.local.php
+
+# Symfony cache and logs
+/Backend/var/cache/
+/Backend/var/log/
+
+# PHPUnit
+/Backend/phpunit.xml
+/Backend/.phpunit.result.cache
+
+# Symfony secrets (keep encrypted vault keys out of Git)
+# Review your secrets management strategy before committing keys.
+# /Backend/config/secrets/*/*.decrypt.private.php
+
+# Composer
+/Backend/auth.json
+
+# IDE
+/Backend/.idea/
+/Backend/.vscode/
+
+# =========================
+# React / Vite Frontend
+# =========================
+
+/Frontend/node_modules/
+/Frontend/dist/
+/Frontend/build/
+/Frontend/.env
+/Frontend/.env.local
+/Frontend/.env.*.local
+
+# Logs
+/Frontend/npm-debug.log*
+/Frontend/yarn-debug.log*
+/Frontend/pnpm-debug.log*
+
+# Testing
+/Frontend/coverage/
+
+# Cache
+/Frontend/.vite/
+/Frontend/.cache/
+
+# IDE
+/Frontend/.idea/
+/Frontend/.vscode/
+
+# =========================
+# General
+# =========================
+
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+
 # Cache and logs (Symfony2)
 /app/cache/*
 /app/logs/*

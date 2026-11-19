@@ -1,0 +1,23 @@
+.error-alert {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 14px 18px;
+    margin: 15px 0;
+
+    color: $text-color;
+    background-color: $danger;
+    border: 1px solid $danger;
+
+    font-size: 14px;
+
+    button {
+        border: none;
+        background: none;
+        color: inherit;
+        font-size: 22px;
+        cursor: pointer;
+    }
+}

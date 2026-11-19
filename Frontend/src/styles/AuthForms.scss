@@ -1,0 +1,118 @@
+
+.auth-form {
+  
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+
+  background: $secondary;
+  color: $text-color;
+  border-radius: 12px;
+  margin: auto;
+  h2 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  
+  label {
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+.auth-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 14px;
+    background: $secondary;
+    font-size: 14px;
+    color: $text-color;
+    border: 1px solid var(--auth-border);
+    border-radius: var(--auth-radius);
+    outline: none;
+    transition: border-color 0.2s;
+
+    &:focus {
+      border-color: var(--auth-primary);
+    }
+    color: #fff;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:autofill {
+        -webkit-text-fill-color: #fff;
+        caret-color: #fff;
+        -webkit-box-shadow: 0 0 0 1000px #252525 inset;
+        box-shadow: 0 0 0 1000px #252525 inset;
+    }
+  }
+
+  input:has(+ .password-toggle) {
+    padding-right: 65px;
+  }
+
+  .password-toggle {
+    position: absolute;
+    right: 12px;
+
+    padding: 4px;
+    background: none;
+    border: none;
+    color: var(--auth-primary);
+    cursor: pointer;
+    font-size: 12px;
+  }
+}
+
+.auth-submit {
+  width: 100%;
+  padding: 13px;
+
+  background: var(--auth-primary);
+  color: white;
+  border: none;
+  border-radius: var(--auth-radius);
+
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover:not(:disabled) {
+    background: var(--auth-primary-hover);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.auth-error {
+  margin: 0;
+  color: var(--auth-error);
+  font-size: 13px;
+}
+
+@media (max-width: 480px) {
+  .auth-form {
+    padding: 24px 18px;
+  }
+}

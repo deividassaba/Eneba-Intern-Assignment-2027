@@ -1,0 +1,160 @@
+
+.order-page {
+  max-width: 1000px;
+  margin: 40px auto;
+
+  color: #fff;
+
+  .order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+
+    p {
+      color: #a5a5b0;
+      margin: 0;
+    }
+
+
+  }
+
+  .order-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background: $secondary;
+    padding: 24px;
+    border-radius: 10px;
+    margin-bottom: 35px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    span {
+      color: #a5a5b0;
+      font-size: 14px;
+    }
+
+    strong {
+      font-size: 18px;
+    }
+  }
+
+  .order-products {
+    h2 {
+      font-size: 21px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .order-product {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background:$secondary;
+    padding: 15px;
+    border-bottom: 1px solid #393b46;
+
+    img {
+      width: 100px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product-details {
+      flex: 1;
+
+      h3 {
+        margin: 0 0 12px;
+        font-size: 16px;
+      }
+    }
+
+    .product-meta {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+
+      span {
+        background: #393b46;
+        color: #c4c4ce;
+        padding: 5px 9px;
+        border-radius: 5px;
+        font-size: 12px;
+      }
+    }
+
+    .seller-details {
+      display: flex;
+      gap: 6px;
+      font-size: 13px;
+
+      span {
+        color: #a5a5b0;
+      }
+    }
+
+    .product-price {
+      font-size: 17px;
+      white-space: nowrap;
+    }
+  }
+
+  .order-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+
+    // button {
+    //   background: #a56eff;
+    //   border: none;
+    //   color: white;
+    //   padding: 12px 20px;
+    //   border-radius: 6px;
+    //   cursor: pointer;
+    //   font-weight: 600;
+
+    //   &:hover {
+    //     background: #9257ef;
+    //   }
+    // }
+  }
+
+  @media (max-width: 600px) {
+    .order-info {
+      grid-template-columns: 1fr;
+    }
+
+    .order-product {
+      gap: 12px;
+
+      img {
+        width: 75px;
+        height: 90px;
+      }
+
+      .product-price {
+        font-size: 14px;
+      }
+    }
+
+    .order-footer {
+      flex-direction: column;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

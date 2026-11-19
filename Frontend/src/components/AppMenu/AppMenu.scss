@@ -1,0 +1,69 @@
+.menu{
+  a:hover{
+  color: $accent;
+  }
+  ul{
+    list-style: none;
+    display:flex;
+    padding: 0;
+    li:hover{
+       background-color: $secondary;
+    }
+  }
+  .logo-link{
+        margin-right: 20px;
+  }
+  a,.logout-btn{
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+    transition-property: color, background;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    line-height: 1;
+    text-align: left;
+    padding: 10px;
+    word-break: normal;
+    &:hover{
+      color: $accent;
+    }
+  }
+  .logout-btn{
+  background: none;
+  border: none;
+  color: inherit;
+  font:inherit;
+  font-size: inherit;
+  &:hover{
+    cursor: pointer;
+  }
+  }
+  .topbar-bar{
+    display: flex;
+    align-items: center;
+    flex: 1
+  }
+  .topbar{
+    margin: 20px 0;
+  }
+  .lowerbar{
+    .nav-container{
+      max-width: $container-width;
+      margin:auto; 
+    }
+    nav{
+              max-width: $container-width;
+      margin:auto; 
+    }
+    text-align: center;
+    background:$secondary ;
+  }
+  .horizontal-divider{
+    // border-left:1px solid #fff ;
+  }
+}
+.app-logo{
+    display: inline-block;
+    max-height: 70px;
+    width: 100%;
+}
