@@ -127,7 +127,4 @@ export default function CheckoutPage() {
     </main>
   );
 }
-function getEmail() {
-  throw new Error("Function not implemented.");
-}
 
