@@ -1,6 +1,10 @@
 
 FROM php:8.4-apache
 
+# Set production environment BEFORE Composer installation
+ENV APP_ENV=prod
+ENV APP_DEBUG=0
+
 # Install PHP extensions and system dependencies
 RUN apt-get update && apt-get install -y \
     git \
@@ -25,7 +29,7 @@ WORKDIR /var/www/html
 COPY . .
 
 # Install production dependencies
-RUN composer install \
+RUN APP_ENV=prod APP_DEBUG=0 composer install \
     --no-dev \
     --prefer-dist \
     --no-interaction \
@@ -38,7 +42,7 @@ RUN sed -ri "s!/var/www/html!${APACHE_DOCUMENT_ROOT}!g" \
     /etc/apache2/sites-available/000-default.conf \
     /etc/apache2/apache2.conf
 
-# Allow Symfony's .htaccess if present
+# Allow Symfony's .htaccess
 RUN sed -ri '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' \
     /etc/apache2/apache2.conf
 
@@ -46,5 +50,4 @@ RUN chown -R www-data:www-data var
 
 EXPOSE 10000
 
-# Render provides PORT (default 10000)
 CMD ["sh", "-c", "sed -i \"s/Listen 80/Listen ${PORT:-10000}/\" /etc/apache2/ports.conf && sed -i \"s/<VirtualHost \\*:80>/<VirtualHost *:${PORT:-10000}>/\" /etc/apache2/sites-available/000-default.conf && apache2-foreground"]
