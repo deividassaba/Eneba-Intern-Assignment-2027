@@ -57,4 +57,4 @@ RUN mkdir -p var/cache var/log \
 
 EXPOSE 10000
 
-CMD ["sh", "-c", "php bin/console doctrine:migrations:migrate --no-interaction --env=prod && sed -i \"s/Listen 80/Listen ${PORT:-10000}/\" /etc/apache2/ports.conf && sed -i \"s/<VirtualHost \\*:80>/<VirtualHost *:${PORT:-10000}>/\" /etc/apache2/sites-available/000-default.conf && apache2-foreground"]
+CMD ["sh", "-c", "mkdir -p config/jwt && cp /etc/secrets/private.pem config/jwt/private.pem && cp /etc/secrets/public.pem config/jwt/public.pem && chown www-data:www-data config/jwt/*.pem && chmod 640 config/jwt/*.pem && php bin/console doctrine:migrations:migrate --no-interaction --env=prod && sed -i \"s/Listen 80/Listen ${PORT:-10000}/\" /etc/apache2/ports.conf && sed -i \"s/<VirtualHost \\*:80>/<VirtualHost *:${PORT:-10000}>/\" /etc/apache2/sites-available/000-default.conf && apache2-foreground"]

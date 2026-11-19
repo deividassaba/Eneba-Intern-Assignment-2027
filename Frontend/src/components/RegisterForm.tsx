@@ -3,6 +3,7 @@ import { useState } from "react";
 import AuthInput from "./AuthInput";
 import AuthButton from "./AuthButton";
 import "./../styles/AuthForms.scss"
+import { useMessage } from "../context/MessageContext";
 
 interface RegisterFormProps {
   title?: string;
@@ -22,19 +23,18 @@ export default function RegisterForm({
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const { showError} = useMessage();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError("");
 
     if (password.length < 8) {
-      setError("Password must contain at least 8 characters.");
+      showError("Password must contain at least 8 characters.");
       return;
     }
 
     if (password !== confirmPassword) {
-      setError("Passwords do not match.");
+      showError("Passwords do not match.");
       return;
     }
 
@@ -43,7 +43,7 @@ export default function RegisterForm({
     try {
       await onSubmit({ email, password });
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Registration failed.");
+      showError(err instanceof Error ? err.message : "Registration failed.");
     } finally {
       setLoading(false);
     }
@@ -80,7 +80,6 @@ export default function RegisterForm({
         onChange={setConfirmPassword}
       />
 
-      {error && <p className="auth-error">{error}</p>}
 
       <AuthButton text={submitText} loading={loading} />
     </form>
