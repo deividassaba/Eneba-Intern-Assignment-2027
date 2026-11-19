@@ -13,6 +13,8 @@ product offers, orders, and PayPal checkout.
 -   Variable naming a_b or aB
 -   Magic variables: routes, image urls etc.
 -   Add filters to StorePage by Region, price etc. 
+-   App secret. 
+-   Hide jwt keys. 
 
 ## Tech stack
 
