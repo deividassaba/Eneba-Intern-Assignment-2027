@@ -4,13 +4,11 @@ import type { ProductOffer } from "../../types";
 
 import "./CartPage.scss";
 import { clearCart, getCart, removeFromCart } from "../../utils/cart";
-import { Link, useNavigate } from "react-router-dom";
-import DeleteIcon from "../../components/icons/DeleteIcon";
+import { Link } from "react-router-dom";
 import CartProduct from "../../components/CartProduct/CartProduct";
 
 export default function CartPage() {
   const [cart, setCart] = useState<ProductOffer[]>([]);
-    const navigation = useNavigate();
   useEffect(() => {
     setCart(getCart());
   }, []);

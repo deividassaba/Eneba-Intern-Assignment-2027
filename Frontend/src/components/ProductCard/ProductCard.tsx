@@ -1,7 +1,6 @@
 
 import { Link } from "react-router-dom";
 import type { Product } from "../../types";
-import AddToCartButton from "../AddToCartButton/AddToCartButton";
 import './ProductCard.scss';
 
 interface ProductCardProps {
@@ -17,7 +16,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="card-body">
           <h2 className="card-title">{product.title}</h2>
           <p className="region">{product.region} </p>
-          <p className="card-price">{product.price /*.toFixed(2)*/} € </p>
+          <p className="card-price">{product.price} € </p>
         </div>
         </div>
     </Link>

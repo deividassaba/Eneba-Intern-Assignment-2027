@@ -3,8 +3,7 @@ import { useState, type FormEvent } from "react";
 import "./SearchBar.scss";
 import type { Product } from "../../types";
 import { fetchProducts } from "../../api/product";
-import { Link, useNavigate } from "react-router-dom";
-import { Button } from "@mui/material";
+import { Link, } from "react-router-dom";
 
 interface SearchBarProps {
   placeholder?: string;

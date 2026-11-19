@@ -1,5 +1,4 @@
-import { apiFetch } from './client';
-import type { LoginRequest, RegisterRequest, User } from '../types';
+import type { LoginRequest, RegisterRequest } from '../types';
 import config from "../config";
 
 
@@ -25,9 +24,6 @@ export async function ApiLoginRequest(data: LoginRequest): Promise<{token: strin
       body: JSON.stringify(data),
     });
 
-    // if (!response.ok) {
-    //   return response.status;
-    // }
 
     const result = await response.json();
 
@@ -35,10 +31,7 @@ export async function ApiLoginRequest(data: LoginRequest): Promise<{token: strin
       throw new Error("Login response does not contain a token");
     }
 
-    // Save authentication data in the current browser session
-    // sessionStorage.setItem("token", result.token);
-    // sessionStorage.setItem("email", data.email);
-    return {token: result.token, email: data.email }//response.status;
+    return {token: result.token, email: data.email }
 
   } catch (error) {
     console.error("Login error:", error);

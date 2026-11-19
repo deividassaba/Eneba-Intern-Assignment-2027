@@ -11,13 +11,9 @@ export default function CheckoutPage() {
   const navigate = useNavigate();
 
   const [cart, setCart] = useState<ProductOffer[]>([]);
-  // const [loading, setLoading] = useState(true);
 
 
   const {token, email } = useAuth()
-  const handleSuccess = () => {
-    
-  }
   useEffect(() => {
      setCart(getCart())
 

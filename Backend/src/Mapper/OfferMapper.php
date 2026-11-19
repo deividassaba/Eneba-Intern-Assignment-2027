@@ -17,7 +17,7 @@ class OfferMapper
         return [
             'product_id' => $product->getId(),
             'title' => $product->getTitle(),
-            'price' => (float) $offer->getPrice(),
+            'price' => /*number_format($offer->getPrice, 2)*/ (float) $offer->getPrice(),
             'img_src' => $product->getImageSrc(),
             'region' => $product->getRegion(),
             'platform' => $product->getPlatform(),

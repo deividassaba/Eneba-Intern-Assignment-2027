@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import type { Order } from "../../types";
-import config from "../../config";
 import "./OrdersPage.scss";
 import { useAuth } from "../../context/AuthContext";
 import { GetOrders } from "../../api/order";

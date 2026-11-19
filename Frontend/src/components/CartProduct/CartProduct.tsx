@@ -1,4 +1,4 @@
-import type { ProductOffer, Product } from "../../types";
+import type { ProductOffer } from "../../types";
 import DeleteIcon from "../icons/DeleteIcon";
 
 interface OfferCardProps {

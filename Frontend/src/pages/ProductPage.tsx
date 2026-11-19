@@ -1,5 +1,5 @@
 
-import { Link, useParams} from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import type { ProductOffer, Product } from '../types';
 import { fetchProduct } from '../api/product';
 import { useEffect, useState } from 'react';
